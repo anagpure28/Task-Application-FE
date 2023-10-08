@@ -56,6 +56,7 @@ export const Tasks = () => {
 
   return (
     <div>
+      <p className='Notes'>Notes Taking Application</p>
       <p
         style={{
           margin: "20px auto 20px",

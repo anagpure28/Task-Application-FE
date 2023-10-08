@@ -67,6 +67,8 @@ export const AddTask = () => {
   };
 
   return (
+    <>
+    <p className='Notes'>Notes Taking Application</p>
     <Flex
       minH={"90vh"}
       align={"center"}
@@ -129,5 +131,6 @@ export const AddTask = () => {
         </Box>
       </Stack>
     </Flex>
+    </>
   );
 };
