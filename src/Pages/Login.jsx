@@ -11,8 +11,6 @@ import {
   Heading,
   Text,
   useColorModeValue,
-  FormHelperText,
-  FormErrorMessage,
 } from "@chakra-ui/react";
 import { Link, useNavigate } from "react-router-dom";
 import { url } from "../url";
@@ -46,15 +44,18 @@ const Login = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if(email !== data.email){
-          alert(data.msg)
-        }else if(password !== data.password){
-          alert(data.msg)
-        }else if (data.token) {
-          localStorage.setItem("userToken", data.token);
+        if (data.token) {
+          localStorage.setItem("userAccessToken", data.token);
           alert(data.msg);
           navigate("/create");
+        }else{
+          if(email !== data.email){
+            alert(data.msg)
+          }else if(password !== data.password){
+            alert(data.msg)
+          }
         }
+        
       })
       .catch((err) => {
         console.log(err);
@@ -63,7 +64,7 @@ const Login = () => {
 
   return (
     <Flex
-      minH={"100vh"}
+      minH={"90vh"}
       align={"center"}
       justify={"center"}
       bg={useColorModeValue("gray.50", "gray.800")}
@@ -77,6 +78,7 @@ const Login = () => {
           bg={useColorModeValue("white", "gray.700")}
           boxShadow={"lg"}
           p={8}
+          style={{border: '1px solid gray'}}
         >
           <Stack spacing={4}>
             <FormControl id="email">

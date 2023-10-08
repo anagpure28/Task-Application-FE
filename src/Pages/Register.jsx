@@ -70,12 +70,12 @@ const Signup = () => {
 
   return (
     <Flex
-      minH={"100vh"}
+      minH={"83vh"}
       align={"center"}
       justify={"center"}
       bg={useColorModeValue("gray.50", "gray.800")}
     >
-      <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
+      <Stack spacing={5} mx={"auto"} maxW={"lg"} py={3} px={4}>
         <Stack align={"center"}>
           <Heading fontSize={"4xl"}>Sign up Form</Heading>
           <Box
@@ -92,6 +92,7 @@ const Signup = () => {
           bg={useColorModeValue("white", "gray.700")}
           boxShadow={"lg"}
           p={8}
+          style={{border: '1px solid gray'}}
         >
           <Stack spacing={4}>
             <FormControl id="name">

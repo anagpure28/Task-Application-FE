@@ -1,6 +1,7 @@
 .App {
   text-align: center;
-  background-color: #f7fafc;
+  background-color: #edf1f5;
+  font-family: serif;
 }
 
 .App-logo {
@@ -42,4 +43,5 @@
   font-size: 30px;
   font-weight: 600;
   margin-top: 20px;
+  text-decoration: underline;
 }
