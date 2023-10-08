@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { url } from "../url";
 import TaskCard from "../components/TaskCard";
-import { Box, Heading, SkeletonText } from "@chakra-ui/react";
+import { Box, Heading, SkeletonText, useToast } from "@chakra-ui/react";
 import { WarningTwoIcon } from "@chakra-ui/icons";
 
 export const Tasks = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const skeleton = [1, 1, 1];
+  const toast = useToast();
 
   // Getting the data
   const getAPI = () => {
@@ -46,11 +47,25 @@ export const Tasks = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data) {
+          toast({
+            title: data.msg,
+            status: 'success',
+            position: 'top',
+            duration: 5000,
+            isClosable: true,
+          })
           getAPI();
         }
       })
       .catch((err) => {
         console.log(err);
+        toast({
+          title: err,
+          status: 'error',
+          position: 'top',
+          duration: 5000,
+          isClosable: true,
+        })
       });
   };
 

@@ -11,6 +11,7 @@ import {
   Heading,
   Text,
   useColorModeValue,
+  useToast,
 } from "@chakra-ui/react";
 import { Link, useNavigate } from "react-router-dom";
 import { url } from "../url";
@@ -23,6 +24,7 @@ const Login = () => {
   const [passwordError, setPasswordError] = useState(false);
 
   const navigate = useNavigate();
+  const toast = useToast()
 
   // Submitting the form
   const handleSubmit = (e) => {
@@ -49,19 +51,44 @@ const Login = () => {
         console.log(data);
         if (data.token) {
           localStorage.setItem("userAccessToken", data.token);
-          alert(data.msg);
+          toast({
+            title: data.msg,
+            status: 'success',
+            position: 'top',
+            duration: 5000,
+            isClosable: true,
+          })
           navigate("/create");
         }else{
           if(email !== data.email){
-            alert(data.msg)
+            toast({
+              title: data.msg,
+              status: 'warning',
+              position: 'top',
+              duration: 5000,
+              isClosable: true,
+            })
           }else if(password !== data.password){
-            alert(data.msg)
+            toast({
+              title: data.msg,
+              status: 'warning',
+              position: 'top',
+              duration: 5000,
+              isClosable: true,
+            })
           }
         }
         
       })
       .catch((err) => {
         console.log(err);
+        toast({
+          title: err,
+          status: 'error',
+          position: 'top',
+          duration: 5000,
+          isClosable: true,
+        })
       });
   };
 

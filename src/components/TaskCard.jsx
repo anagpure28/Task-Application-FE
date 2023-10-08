@@ -2,16 +2,8 @@ import {
   Box,
   Button,
   Text,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-  useDisclosure,
 } from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Scrollbars } from "react-custom-scrollbars-2";
 import { ModalCard } from "./Modal";
 

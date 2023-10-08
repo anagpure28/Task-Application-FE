@@ -14,6 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { Link, useNavigate } from "react-router-dom";
 import { url } from "../url";
+import { useToast } from '@chakra-ui/react'
 
 const Signup = () => {
   const [name, setName] = useState("");
@@ -26,6 +27,7 @@ const Signup = () => {
   const [passwordError, setPasswordError] = useState(false);
   const [confirmPasswordError, setConfirmPasswordError] = useState(false);
 
+  const toast = useToast()
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -52,10 +54,22 @@ const Signup = () => {
         .then((data) => {
           console.log(data);
           if (data.msg === "User already exists") {
-            alert(data.msg);
+            toast({
+              title: data.msg,
+              status: 'warning',
+              position: 'top',
+              duration: 5000,
+              isClosable: true,
+            })
             return;
           } else {
-            alert(data.msg);
+            toast({
+              title: data.msg,
+              position: 'top',
+              status: 'success',
+              duration: 5000,
+              isClosable: true,
+            })
             navigate("/login");
           }
         })
@@ -63,7 +77,13 @@ const Signup = () => {
           console.log(err);
         });
     } else {
-      alert("Password not Matching");
+      toast({
+        title: 'Password not Matching',
+        position: 'top',
+        status: 'error',
+        duration: 5000,
+        isClosable: true,
+      })
       return;
     }
   };

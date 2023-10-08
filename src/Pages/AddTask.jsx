@@ -11,6 +11,7 @@ import {
   Heading,
   Text,
   useColorModeValue,
+  useToast,
 } from "@chakra-ui/react";
 import { url } from "../url";
 
@@ -20,6 +21,8 @@ export const AddTask = () => {
 
   const [titleError, setTitleError] = useState(false);
   const [descriptionError, setdescriptionError] = useState(false);
+
+  const toast = useToast();
 
   // Adding the Task
   const handleSubmit = () => {
@@ -53,16 +56,34 @@ export const AddTask = () => {
       .then((data) => {
         console.log(data);
         if (data) {
-          alert(data.msg);
+          toast({
+            title: data.msg,
+            status: 'success',
+            position: 'top',
+            duration: 5000,
+            isClosable: true,
+          })
           setTitle("");
           setDescription("");
         } else {
-          alert(data.msg);
+          toast({
+            title: data.msg,
+            status: 'warning',
+            position: 'top',
+            duration: 5000,
+            isClosable: true,
+          })
         }
       })
       .catch((err) => {
         console.log(err);
-        alert(err);
+        toast({
+          title: err,
+          status: 'error',
+          position: 'top',
+          duration: 5000,
+          isClosable: true,
+        })
       });
   };
 

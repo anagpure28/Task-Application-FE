@@ -11,6 +11,7 @@ import {
   Input,
   FormLabel,
   FormControl,
+  useToast,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { url } from "../url";
@@ -19,6 +20,8 @@ export function ModalCard({ closePopup, api, selectedUser }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+
+  const toast = useToast();
 
   const ClosePopup = () => {
     onClose();
@@ -50,15 +53,28 @@ export function ModalCard({ closePopup, api, selectedUser }) {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
+        console.log(data);
         if (data) {
+          toast({
+            title: data.msg,
+            status: "success",
+            position: "top",
+            duration: 5000,
+            isClosable: true,
+          });
           api();
-          closePopup()
+          closePopup();
         }
       })
       .catch((err) => {
         console.log(err);
-        alert(err)
+        toast({
+          title: err,
+          status: "error",
+          position: "top",
+          duration: 5000,
+          isClosable: true,
+        });
       });
   };
 
