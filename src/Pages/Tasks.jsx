@@ -109,7 +109,7 @@ export const Tasks = () => {
             {data.length > 0 &&
               data?.map((el, i) => (
                 <div key={i}>
-                  <TaskCard {...el} HandleDelete={HandleDelete} api={getAPI} />
+                  <TaskCard {...el} ind={i} HandleDelete={HandleDelete} api={getAPI} />
                 </div>
               ))}
           </div>

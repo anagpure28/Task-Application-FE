@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import { Scrollbars } from "react-custom-scrollbars-2";
 import { ModalCard } from "./Modal";
 
-function TaskCard({ _id, title, description, HandleDelete, HandleUpdate, api }) {
+function TaskCard({ _id, title, description, HandleDelete, ind, api }) {
   const [isUpdateOpen, setIsUpdateOpen] = useState(false);
   const [SelectedUser, setSelectedUser] = useState(undefined);
 
@@ -41,7 +41,7 @@ function TaskCard({ _id, title, description, HandleDelete, HandleUpdate, api }) 
           borderTopRightRadius: "12px",
         }}
       >
-        TASK
+        TASK - {ind + 1}
       </Box>
       <Box>
         <Text
