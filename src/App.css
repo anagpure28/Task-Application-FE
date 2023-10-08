@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #f7fafc;
 }
 
 .App-logo {
@@ -35,4 +36,10 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.Notes {
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 20px;
 }
