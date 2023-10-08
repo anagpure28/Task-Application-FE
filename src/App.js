@@ -5,6 +5,7 @@ import Register from './Pages/Register';
 import { AddTask } from './Pages/AddTask';
 import { Tasks } from './Pages/Tasks';
 import Navbar from "./components/Navbar"
+import Home from './Pages/Home';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <Navbar />
       <p className='Notes'>Notes Taking Application</p>
       <Routes>
-        <Route path="/" element={<h3>Welcome...</h3>}/>
+        <Route path="/" element={<Home />}/>
         <Route path="/login" element={<Login />}/>
         <Route path="/register" element={<Register />}/>
         <Route path="/create" element={<AddTask />}/>

@@ -24,9 +24,11 @@ const Login = () => {
 
   const navigate = useNavigate();
 
+  // Submitting the form
   const handleSubmit = (e) => {
     const payload = { email, password };
 
+    // Error Handling
     { !email ? setEmailError(true) : setEmailError(false)}
     { !password ? setPasswordError(true) : setPasswordError(false)}
 
@@ -34,6 +36,7 @@ const Login = () => {
         return false
     }
 
+    // Login post request
     fetch(`${url}/users/login`, {
       method: "POST",
       headers: {

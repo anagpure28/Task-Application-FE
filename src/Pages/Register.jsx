@@ -83,8 +83,6 @@ const Signup = () => {
             alignItems={"center"}
             justifyContent={"space-around"}
           >
-            {/* <Button style={{border: "px solid black"}} onClick={handleLogin}>Login</Button> */}
-            {/* <Button scaleYtyle={{border: "px solid black"}} onClick={handleSignup}>Signup</Button> */}
           </Box>
         </Stack>
         <Box

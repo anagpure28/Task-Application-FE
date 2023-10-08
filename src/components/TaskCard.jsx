@@ -1,8 +1,35 @@
-import { Box, Button, Text } from "@chakra-ui/react";
-import React from "react";
+import {
+  Box,
+  Button,
+  Text,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
+} from "@chakra-ui/react";
+import React, { useEffect, useState } from "react";
 import { Scrollbars } from "react-custom-scrollbars-2";
+import { ModalCard } from "./Modal";
 
-function TaskCard({ title, description }) {
+function TaskCard({ _id, title, description, HandleDelete, HandleUpdate, api }) {
+  const [isUpdateOpen, setIsUpdateOpen] = useState(false);
+  const [SelectedUser, setSelectedUser] = useState(undefined);
+
+  // Update the id
+  const Update = (_id, title, description) => {
+    setIsUpdateOpen(true);
+    setSelectedUser({_id, title, description});
+  };
+
+  // Delete the id
+  const Delete = () => {
+    HandleDelete(_id)
+  };
+
   return (
     <Box
       maxW="sm"
@@ -85,12 +112,17 @@ function TaskCard({ title, description }) {
             padding: "5px",
           }}
         >
-          <Button>Update</Button>
-          <Button>Delete</Button>
+          <Button onClick={()=> Update(_id, title, description)}>
+            Update
+          </Button>
+          <Button onClick={Delete}>Delete</Button>
         </Box>
       </Box>
+      
+      {/* Showing Modal */}
+      {isUpdateOpen && <ModalCard closePopup={()=> setIsUpdateOpen(!isUpdateOpen)} selectedUser={SelectedUser} api={api} />}
     </Box>
   );
 }
 
-export default TaskCard;
+  export default TaskCard;
