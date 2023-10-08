@@ -6,6 +6,7 @@ import { AddTask } from './Pages/AddTask';
 import { Tasks } from './Pages/Tasks';
 import Navbar from "./components/Navbar"
 import Home from './Pages/Home';
+import NotFound from './Pages/NotFound';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         <Route path="/register" element={<Register />}/>
         <Route path="/create" element={<AddTask />}/>
         <Route path="/tasks" element={<Tasks />}/>
-        <Route path="*" element={<h3>No Page Found</h3>}/>
+        <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </div>
   );
