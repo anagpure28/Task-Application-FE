@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+## TASK APPLICATION FRONTEND
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  Deployed link - https://frontend-kt8dxfa15-anagpure28.vercel.app/
 
-## Available Scripts
+# Task Management Frontend
 
-In the project directory, you can run:
+This is a React-based user interface for managing tasks. It allows users to list tasks, add tasks, edit tasks, and delete tasks. The frontend communicates with the backend RESTful API to perform these operations. Axios is used to make HTTP requests to the backend.
 
-### `npm start`
+## Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Before you begin, ensure you have met the following requirements:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Node.js and npm (Node Package Manager) installed on your machine. You can download them from [nodejs.org](https://nodejs.org/).
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ # Clone the repository:
 
-### `npm run build`
+    git clone https://github.com/yourusername/task-management-frontend.git
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Clone the repository:
 
-### `npm run eject`
+   https://github.com/anagpure28/Task-Application-FE.git
+   
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Install dependencies:
+  
+        npm install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Create a .env file in the root directory with the following content:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+        REACT_APP_API_URL = https://task-application1.onrender.com  
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   Adjust the PORT and MONGODB_URI values as needed.
 
-## Learn More
+3. Start the application:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+        npm start
+   
+4. The API should now be running. You can access it at http://localhost:3000.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Features
 
-### Code Splitting
+    List Tasks: View a list of tasks fetched from the backend.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    Add Task: Create a new task using a form.
 
-### Analyzing the Bundle Size
+    Edit Task: Edit an existing task using a form.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    Delete Task: Delete a task from the list.
 
-### Making a Progressive Web App
+    Validation: Input fields are validated, and error feedback is provided for any validation errors.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# Project Structure
 
-### Advanced Configuration
+    src/components/: Contains React components for the application.
+    src/pages/: Contains various pages of the application.
+    src/App.js: Main application component.
+    src/index.js: Entry point of the application.
+    
+# Customize
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+  You can customize the application by modifying the React components, styles, and other files in the src/ directory. Update the Axios requests in the service files to match your backend API endpoints.
 
-### Deployment
+# Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  Contributions are welcome! Please read the Contributing Guidelines for more details.
